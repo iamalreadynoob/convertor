@@ -54,6 +54,12 @@ public class Positions
         Screen.convert.setBackground(Color.GRAY.brighter());
         Screen.convert.setForeground(Color.BLACK);
         Screen.convert.setText("convert");
+
+        Screen.info.setBounds(20, 190, 600, 30);
+        Screen.info.setEditable(false);
+        Screen.info.setBackground(Color.GRAY.brighter());
+        Screen.info.setForeground(Color.BLACK);
+
     }
 
 }

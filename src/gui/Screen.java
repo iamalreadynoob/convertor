@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Screen extends JFrame
 {
 
-    protected static JTextField prompt, from, to;
+    protected static JTextField prompt, from, to, info;
     protected static JButton convert, choose;
     protected static JComboBox<String> fromList, toList;
 

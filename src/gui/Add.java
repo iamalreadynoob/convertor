@@ -10,6 +10,7 @@ public class Add
         frame.add(Screen.prompt);
         frame.add(Screen.from);
         frame.add(Screen.to);
+        frame.add(Screen.info);
         frame.add(Screen.convert);
         frame.add(Screen.choose);
         frame.add(Screen.fromList);

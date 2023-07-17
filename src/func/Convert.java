@@ -3,17 +3,9 @@ package func;
 public class Convert
 {
 
-    public Convert(Types from, Types to, String path)
+    public Convert(String from, String to, String path)
     {
-        switch (from)
-        {
-            case WEBP: new WebpHandling(to, path); break;
-        }
-    }
-
-    public enum Types
-    {
-        WEBP, PNG, JPG
+        if (from.equals("webp")) new WebpHandling(to, path);
     }
 
 }

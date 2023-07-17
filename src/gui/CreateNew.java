@@ -10,6 +10,7 @@ public class CreateNew
         Screen.prompt = new JTextField();
         Screen.from = new JTextField();
         Screen.to = new JTextField();
+        Screen.info = new JTextField();
 
         Screen.convert = new JButton();
         Screen.choose = new JButton();

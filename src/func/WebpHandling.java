@@ -8,17 +8,14 @@ import java.io.IOException;
 public class WebpHandling
 {
 
-    protected WebpHandling(Convert.Types to, String path)
+    protected WebpHandling(String to, String path)
     {
-        switch (to)
-        {
-            case PNG: toPng(path); break;
-        }
+        if (to.equals("png")) toPng(path);
     }
 
     private void toPng(String path)
     {
-        String newPath = path.split("/")[path.split("/").length - 1].split("\\.")[0];
+        String newPath = path.split("/")[path.split("/").length - 1].split("\\.")[0] + ".png";
 
         File input = new File(path);
         File output = new File(newPath);
@@ -27,9 +24,12 @@ public class WebpHandling
         {
             BufferedImage webp = ImageIO.read(input);
 
-            BufferedImage png = new BufferedImage(webp.getWidth(), webp.getHeight(), BufferedImage.TYPE_INT_ARGB);
-            png.getGraphics().drawImage(webp, 0, 0, null);
-            ImageIO.write(png, "png", output);
+            if (webp != null)
+            {
+                BufferedImage png = new BufferedImage(webp.getWidth(), webp.getHeight(), BufferedImage.TYPE_INT_ARGB);
+                png.getGraphics().drawImage(webp, 0, 0, null);
+                ImageIO.write(png, "png", output);
+            }
         }
         catch (IOException e){e.printStackTrace();}
     }

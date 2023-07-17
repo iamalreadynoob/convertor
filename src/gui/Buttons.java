@@ -10,6 +10,7 @@ import java.io.File;
 
 public class Buttons
 {
+    private String absPath;
 
     public Buttons(JFrame frame)
     {
@@ -18,7 +19,13 @@ public class Buttons
             @Override
             public void actionPerformed(ActionEvent actionEvent)
             {
-
+                if (Screen.fromList.getSelectedItem() != null &&
+                Screen.toList.getSelectedItem() != null)
+                {
+                    new Convert(Screen.fromList.getSelectedItem().toString(),
+                            Screen.toList.getSelectedItem().toString(),
+                            absPath);
+                }
             }
         });
 
@@ -32,9 +39,8 @@ public class Buttons
 
                 if (value == JFileChooser.APPROVE_OPTION)
                 {
-                    File file = chooser.getSelectedFile();
-                    //TODO: fill
-                    //new Convert()
+                    absPath = chooser.getSelectedFile().getAbsolutePath();
+                    Screen.info.setText("The \"" + chooser.getSelectedFile().getAbsolutePath() + "\" located file has been chosen.");
                 }
             }
         });
